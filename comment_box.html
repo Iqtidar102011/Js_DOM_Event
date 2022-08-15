@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>please add your comment</h2>
+    <div id="comment_container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eos quae non ipsum id cumque, aliquam numquam
+            natus harum mollitia velit. Recusandae doloremque aliquam rerum quidem iure laboriosam blanditiis repellat.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolores fuga illo eligendi quidem
+            distinctio, culpa quisquam cumque quas deserunt, delectus nobis veritatis commodi? Consequatur optio
+            obcaecati perspiciatis accusantium. Necessitatibus.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus quas tempora earum nesciunt provident
+            voluptas quam odio quo. Consequuntur, tenetur tempore. Sed, nostrum dicta. Beatae in pariatur vitae voluptas
+            minima?</p>
+    </div>
+    <!-- use text area to create a text box -->
+    <div>
+        <textarea name="" id="new_comment" cols="30" rows="10"></textarea>
+        <br>
+        <button id="btn-post">post</button>
+    </div>
+    <script>
+        // step 1: add event listener to the post button
+        document.getElementById("btn-post").addEventListener('click', function () {
+            // step 2:get the comment(value from the text area)
+            const textArea = document.getElementById("new_comment");
+            const textAreaInput = textArea.value;
+            // step 3 set the comment inside the comment container
+            const commentDiv = document.getElementById("comment_container")
+            // step 3.1 create a new paragraph by createElement
+            const p = document.createElement('p');
+            // step 3.2 set the inner text of the p from the value of commentbox
+            p.innerText = textAreaInput;
+            // step 3.3 add this p to the div by using appendChild
+            commentDiv.appendChild(p);
+            // step 4 : clear the text area
+            textArea.value = '';
+
+
+
+        })
+    </script>
+
+</body>
+
+</html>

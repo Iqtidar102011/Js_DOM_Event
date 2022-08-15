@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>event handlar recap</h1>
+    <h3 id="initial_text">intial text</h3>
+    <h3 id="second_heading">default text</h3>
+    <!-- handle event by on click -->
+    <button onclick="clickHere()">click here to change text</button>
+    <!-- handle event by addEventListner -->
+    <button id="second_button">event handled by addEventListner</button><br><br>
+    <!-- addEventListener another example -->
+    <p id="default">default input</p><br><br>
+    <input id="input_field" type="text">
+    <button id="btn_update">click here to update input</button>
+    <script>
+        function clickHere() {
+            const a = document.getElementById("initial_text");
+            a.innerText = "text changed by clicking"
+        }
+        // option 2
+        document.getElementById("second_button").addEventListener('click', function () {
+            const b = document.getElementById("second_heading");
+            b.innerText = "text changed by event handler";
+        })
+        // another example
+        document.getElementById("btn_update").addEventListener('click', function () {
+            const inputField = document.getElementById("input_field");
+            const inputText = inputField.value;
+            const defaultText = document.getElementById("default");
+            defaultText.innerText = inputText;
+            inputField.value = '';
+
+
+        })
+
+
+
+
+    </script>
+
+</body>
+
+</html>
